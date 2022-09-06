@@ -1,16 +1,21 @@
-import React from 'react';
-import Button from './components/Button';
+import React, { useState } from 'react';
 import Image from './components/Image';
 import Menu from './components/Menu';
 import Title from './components/Title';
 
 function App() {
+	const [data, setData] = useState([]);
+
+	const getData = (response) => {
+		// console.log(response);
+		setData(response);
+	};
+
 	return (
 		<div className="App">
 			<Title />
-			<Menu />
-			<Image />
-			<Button />
+			<Menu getData={getData} />
+			<Image data={data} />
 		</div>
 	);
 }

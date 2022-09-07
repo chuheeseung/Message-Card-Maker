@@ -48,7 +48,9 @@ function Image({ data }) {
 					onChange={handleMessge}
 				/>
 			</WriteMessage>
-			<SubmitButton onClick={handleDownload}>이미지 저장하기</SubmitButton>;
+			<ButtonWrap>
+				<SubmitButton onClick={handleDownload}>이미지 저장하기</SubmitButton>
+			</ButtonWrap>
 		</>
 	);
 }
@@ -60,8 +62,7 @@ const ImageWrap = styled.div`
 `;
 
 const ImageSelected = styled.img`
-	width: 50%;
-	height: 50%;
+	width: 100%;
 	overflow: hidden;
 `;
 
@@ -73,6 +74,11 @@ const WriteMessage = styled.div`
 	border: 1px solid red;
 `;
 
+const ButtonWrap = styled.div``;
+
 const SubmitButton = styled.button`
 	border: 1px solid red;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
 `;

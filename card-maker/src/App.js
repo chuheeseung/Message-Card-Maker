@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from './components/Image';
 import Menu from './components/Menu';
 import Title from './components/Title';
@@ -10,6 +10,10 @@ function App() {
 		// console.log(response);
 		setData(response);
 	};
+
+	useEffect(() => {
+		setData([0, '']);
+	}, []);
 
 	return (
 		<div className="App">

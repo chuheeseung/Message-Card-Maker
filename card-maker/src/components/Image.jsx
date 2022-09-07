@@ -28,7 +28,6 @@ function Image({ data }) {
 	};
 
 	useEffect(() => {
-		console.log('Image.jsx', data);
 		setImageIndex(data[0]);
 		setBible(data[1]);
 	}, [data]);

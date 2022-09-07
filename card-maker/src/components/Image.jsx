@@ -1,15 +1,30 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { images } from '../data/image';
 import { bibles } from '../data/bible';
+import domtoimage from 'dom-to-image';
+import { saveAs } from 'file-saver';
 
 function Image({ data }) {
 	const [message, setMessage] = useState('');
 	const [imageIndex, setImageIndex] = useState(0);
 	const [bible, setBible] = useState('');
 
+	const imgResult = useRef();
+
 	const handleMessge = (e) => {
 		setMessage(e.target.value);
+	};
+
+	const handleDownload = () => {
+		const image = imgResult.current;
+		const filter = (image) => {
+			return image.tagName !== 'BUTTON';
+		};
+
+		domtoimage.toBlob(image, { filter: filter }).then((blob) => {
+			saveAs(blob, 'card.png');
+		});
 	};
 
 	useEffect(() => {
@@ -19,7 +34,7 @@ function Image({ data }) {
 
 	return (
 		<>
-			<ImageWrap>
+			<ImageWrap ref={imgResult}>
 				<ImageSelected src={images[imageIndex]} alt="background" />
 				<Message>{message}</Message>
 				<Bible>{bible}</Bible>
@@ -33,7 +48,7 @@ function Image({ data }) {
 					onChange={handleMessge}
 				/>
 			</WriteMessage>
-			<SubmitButton>이미지 저장하기</SubmitButton>;
+			<SubmitButton onClick={handleDownload}>이미지 저장하기</SubmitButton>;
 		</>
 	);
 }

@@ -37,50 +37,50 @@ function Menu({ getData }) {
 
 	const showBibles = () => {
 		return (
-			<div>
-				<p
+			<TextWrap>
+				<MinText
 					value={bibles[0]['max']}
 					name={bibles[0]['index']}
 					onClick={getBible}
 				>
 					{bibles[0]['min']}
-				</p>
-				<p
+				</MinText>
+				<MinText
 					value={bibles[1]['max']}
 					name={bibles[1]['index']}
 					onClick={getBible}
 				>
 					{bibles[1]['min']}
-				</p>
-				<p
+				</MinText>
+				<MinText
 					value={bibles[2]['max']}
 					name={bibles[2]['index']}
 					onClick={getBible}
 				>
 					{bibles[2]['min']}
-				</p>
-				<p
+				</MinText>
+				<MinText
 					value={bibles[3]['max']}
 					name={bibles[3]['index']}
 					onClick={getBible}
 				>
 					{bibles[3]['min']}
-				</p>
-				<p
+				</MinText>
+				<MinText
 					value={bibles[4]['max']}
 					name={bibles[4]['index']}
 					onClick={getBible}
 				>
 					{bibles[4]['min']}
-				</p>
-				<p
+				</MinText>
+				<MinText
 					value={bibles[5]['max']}
 					name={bibles[5]['index']}
 					onClick={getBible}
 				>
 					{bibles[5]['min']}
-				</p>
-			</div>
+				</MinText>
+			</TextWrap>
 		);
 	};
 
@@ -135,4 +135,13 @@ const DataWrap = styled.div`
 const MenuImg = styled.img`
 	width: 40px;
 	height: 40px;
+`;
+
+const TextWrap = styled.div`
+	display: flex;
+`;
+
+const MinText = styled.p`
+	border: 1px solid red;
+	white-space: pre;
 `;

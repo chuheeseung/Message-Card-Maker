@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { images } from '../data/image';
-import { bibles } from '../data/bible';
 import domtoimage from 'dom-to-image';
 import { saveAs } from 'file-saver';
 

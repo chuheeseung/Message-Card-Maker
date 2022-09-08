@@ -115,9 +115,18 @@ export default Menu;
 
 const ButtonWrap = styled.div`
 	border: 1px solid red;
+	background-color: #f0eefa;
+	justify-content: space-between;
 `;
 
-const Button = styled.button``;
+const Button = styled.button`
+	width: 80px;
+	height: 30px;
+	margin: 10px 20px;
+	background-color: #b4aee8;
+	border: none;
+	border-radius: 50px;
+`;
 
 const DataWrap = styled.div`
 	border: 1px solid red;

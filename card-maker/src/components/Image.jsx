@@ -59,6 +59,7 @@ export default Image;
 
 const ImageWrap = styled.div`
 	border: 1px solid red;
+	background-color: white;
 `;
 
 const ImageSelected = styled.img`
@@ -81,4 +82,16 @@ const SubmitButton = styled.button`
 	position: fixed;
 	bottom: 0;
 	width: 100%;
+	height: 15vh;
+	border: none;
+	border-top-left-radius: 40px;
+	border-top-right-radius: 40px;
+	background-color: #4440b3;
+	font-size: 26px;
+	color: white;
+
+	&:hover {
+		transition: all ease 0.1s;
+		transform: scale(1.05);
+	}
 `;

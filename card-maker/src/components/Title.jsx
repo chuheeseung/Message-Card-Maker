@@ -9,4 +9,11 @@ export default Title;
 
 const TitleText = styled.div`
 	border: 1px solid red;
+	width: 100%;
+	height: 7vh;
+	padding-top: 10px;
+	font-size: 30px;
+	font-weight: 700;
+	text-align: center;
+	background-color: #c7c1db;
 `;

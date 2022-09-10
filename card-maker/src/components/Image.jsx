@@ -33,8 +33,8 @@ function Image({ data }) {
 
 	return (
 		<>
-			<ImageWrap ref={imgResult}>
-				<ImageSelected src={images[imageIndex]} alt="background" />
+			<ImageWrap ref={imgResult} backgroundImage={images[imageIndex]}>
+				{/* <ImageSelected src={images[imageIndex]} alt="background" /> */}
 				<Message>{message}</Message>
 				<Bible>{bible}</Bible>
 			</ImageWrap>
@@ -57,13 +57,17 @@ function Image({ data }) {
 export default Image;
 
 const ImageWrap = styled.div`
+	width: 100%;
+	height: 50vh;
 	background-color: white;
+	background-image: url(${(props) => props.backgroundImage});
+	background-size: cover;
 `;
 
-const ImageSelected = styled.img`
-	width: 100%;
-	overflow: hidden;
-`;
+// const ImageSelected = styled.img`
+// 	width: 100%;
+// 	overflow: hidden;
+// `;
 
 const Message = styled.div``;
 

@@ -32,7 +32,7 @@ function Menu({ getData }) {
 	};
 
 	const getImage = (e) => {
-		setImageData(e.target.name);
+		setImageData(Number(e.target.name));
 	};
 
 	const showBibles = () => {

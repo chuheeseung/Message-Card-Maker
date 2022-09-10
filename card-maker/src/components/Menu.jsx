@@ -114,7 +114,6 @@ function Menu({ getData }) {
 export default Menu;
 
 const ButtonWrap = styled.div`
-	border: 1px solid red;
 	background-color: #f0eefa;
 	justify-content: space-between;
 `;
@@ -128,9 +127,7 @@ const Button = styled.button`
 	border-radius: 50px;
 `;
 
-const DataWrap = styled.div`
-	border: 1px solid red;
-`;
+const DataWrap = styled.div``;
 
 const MenuImg = styled.img`
 	width: 40px;
@@ -142,6 +139,5 @@ const TextWrap = styled.div`
 `;
 
 const MinText = styled.p`
-	border: 1px solid red;
 	white-space: pre;
 `;

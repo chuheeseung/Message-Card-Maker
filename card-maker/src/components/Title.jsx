@@ -8,7 +8,6 @@ function Title() {
 export default Title;
 
 const TitleText = styled.div`
-	border: 1px solid red;
 	width: 100%;
 	height: 7vh;
 	padding-top: 10px;

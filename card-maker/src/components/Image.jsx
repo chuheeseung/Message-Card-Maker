@@ -57,7 +57,6 @@ function Image({ data }) {
 export default Image;
 
 const ImageWrap = styled.div`
-	border: 1px solid red;
 	background-color: white;
 `;
 
@@ -70,21 +69,18 @@ const Message = styled.div``;
 
 const Bible = styled.div``;
 
-const WriteMessage = styled.div`
-	border: 1px solid red;
-`;
+const WriteMessage = styled.div``;
 
 const ButtonWrap = styled.div``;
 
 const SubmitButton = styled.button`
-	border: 1px solid red;
-	position: fixed;
-	bottom: 0;
 	width: 100%;
 	height: 15vh;
 	border: none;
-	border-top-left-radius: 40px;
-	border-top-right-radius: 40px;
+	position: fixed;
+	bottom: 0;
+	border-top-left-radius: 30px;
+	border-top-right-radius: 30px;
 	background-color: #4440b3;
 	font-size: 26px;
 	color: white;

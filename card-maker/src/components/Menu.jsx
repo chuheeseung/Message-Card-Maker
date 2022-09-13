@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { images } from '../data/image';
-import { bibles } from '../data/bible';
 import BibleCategories from './BibleCategories';
+import BackgroundImage from './BackgroundImage';
 
 function Menu({ getData }) {
 	const [menu, setMenu] = useState('');
@@ -17,29 +16,12 @@ function Menu({ getData }) {
 		setMenu('bible');
 	};
 
-	const showBackGround = () => {
-		return (
-			<div>
-				{images.map((item) => {
-					return (
-						<MenuImg
-							key={item[1]}
-							src={item[0]}
-							name={item[1]}
-							onClick={getImage}
-						/>
-					);
-				})}
-			</div>
-		);
-	};
-
-	const getImage = (e) => {
-		setImageData(Number(e.target.name));
-	};
-
 	const handleBible = (e) => {
 		setBibleData(e);
+	};
+
+	const handleImage = (e) => {
+		setImageData(e);
 	};
 
 	useEffect(() => {
@@ -57,7 +39,7 @@ function Menu({ getData }) {
 				</Button>
 			</ButtonWrap>
 			<DataWrap>
-				{menu === 'backGround' && showBackGround()}
+				{menu === 'backGround' && <BackgroundImage handleImage={handleImage} />}
 				{menu === 'bible' && <BibleCategories handleBible={handleBible} />}
 			</DataWrap>
 		</>
@@ -81,8 +63,3 @@ export const Button = styled.button`
 `;
 
 export const DataWrap = styled.div``;
-
-const MenuImg = styled.img`
-	width: 40px;
-	height: 40px;
-`;

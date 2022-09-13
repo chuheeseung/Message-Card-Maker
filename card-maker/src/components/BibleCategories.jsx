@@ -43,7 +43,7 @@ function BibleCategories({ handleBible }) {
 
 	useEffect(() => {
 		handleBible(selectedBible);
-	}, [selectedBible]);
+	}, [handleBible, selectedBible]);
 
 	return (
 		<>

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { images } from '../data/image';
 import { bibles } from '../data/bible';
+import BibleCategoreis from './BibleCategoreis';
 
 function Menu({ getData }) {
 	const [menu, setMenu] = useState('');
@@ -41,10 +42,9 @@ function Menu({ getData }) {
 		return <div>bibles</div>;
 	};
 
-	const getBible = (e) => {
-		// console.log(e.target.attributes[0].textContent);
-		setBibleData(e.target.attributes[0].textContent);
-	};
+	// const getBible = (e) => {
+	// 	setBibleData(e.target.attributes[0].textContent);
+	// };
 
 	useEffect(() => {
 		getData([imageData, bibleData]);
@@ -62,7 +62,7 @@ function Menu({ getData }) {
 			</ButtonWrap>
 			<DataWrap>
 				{menu === 'backGround' && showBackGround()}
-				{menu === 'bible' && showBibles()}
+				{menu === 'bible' && <BibleCategoreis />}
 			</DataWrap>
 		</>
 	);
@@ -70,12 +70,12 @@ function Menu({ getData }) {
 
 export default Menu;
 
-const ButtonWrap = styled.div`
+export const ButtonWrap = styled.div`
 	background-color: #f0eefa;
 	justify-content: space-between;
 `;
 
-const Button = styled.button`
+export const Button = styled.button`
 	width: 80px;
 	height: 30px;
 	margin: 10px 20px;
@@ -84,17 +84,9 @@ const Button = styled.button`
 	border-radius: 50px;
 `;
 
-const DataWrap = styled.div``;
+export const DataWrap = styled.div``;
 
 const MenuImg = styled.img`
 	width: 40px;
 	height: 40px;
-`;
-
-const TextWrap = styled.div`
-	display: flex;
-`;
-
-const MinText = styled.p`
-	white-space: pre;
 `;

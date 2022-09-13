@@ -82,8 +82,8 @@ const SubmitButton = styled.button`
 	width: 100%;
 	height: 15vh;
 	border: none;
-	position: fixed;
-	bottom: 0;
+	/* position: fixed;
+	bottom: 0; */
 	border-top-left-radius: 30px;
 	border-top-right-radius: 30px;
 	background-color: #4440b3;

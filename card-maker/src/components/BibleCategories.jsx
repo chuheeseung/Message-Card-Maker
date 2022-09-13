@@ -5,8 +5,9 @@ import styled from 'styled-components';
 import { bibles } from '../data/bible';
 import { Button, ButtonWrap, DataWrap } from './Menu';
 
-function BibleCategoreis() {
+function BibleCategories({ handleBible }) {
 	const [category, setCategory] = useState('');
+	const [selectedBible, setSelectedBible] = useState('');
 
 	const showPleasure = () => {
 		return (
@@ -37,8 +38,12 @@ function BibleCategoreis() {
 	};
 
 	const getBible = (e) => {
-		console.log(e.target.attributes[0].textContent);
+		setSelectedBible(e.target.attributes[0].textContent);
 	};
+
+	useEffect(() => {
+		handleBible(selectedBible);
+	}, [selectedBible]);
 
 	return (
 		<>
@@ -58,7 +63,7 @@ function BibleCategoreis() {
 	);
 }
 
-export default BibleCategoreis;
+export default BibleCategories;
 
 const TextWrap = styled.div`
 	display: flex;

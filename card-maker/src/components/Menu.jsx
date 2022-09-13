@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { images } from '../data/image';
 import { bibles } from '../data/bible';
-import BibleCategoreis from './BibleCategoreis';
+import BibleCategories from './BibleCategories';
 
 function Menu({ getData }) {
 	const [menu, setMenu] = useState('');
@@ -38,13 +38,9 @@ function Menu({ getData }) {
 		setImageData(Number(e.target.name));
 	};
 
-	const showBibles = () => {
-		return <div>bibles</div>;
+	const handleBible = (e) => {
+		setBibleData(e);
 	};
-
-	// const getBible = (e) => {
-	// 	setBibleData(e.target.attributes[0].textContent);
-	// };
 
 	useEffect(() => {
 		getData([imageData, bibleData]);
@@ -62,7 +58,7 @@ function Menu({ getData }) {
 			</ButtonWrap>
 			<DataWrap>
 				{menu === 'backGround' && showBackGround()}
-				{menu === 'bible' && <BibleCategoreis />}
+				{menu === 'bible' && <BibleCategories handleBible={handleBible} />}
 			</DataWrap>
 		</>
 	);

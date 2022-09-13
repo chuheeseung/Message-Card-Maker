@@ -27,6 +27,7 @@ function Image({ data }) {
 	};
 
 	useEffect(() => {
+		console.log(data);
 		setImageIndex(data[0]);
 		setBible(data[1]);
 	}, [data]);
@@ -34,7 +35,6 @@ function Image({ data }) {
 	return (
 		<>
 			<ImageWrap ref={imgResult} backgroundImage={images[imageIndex][0]}>
-				{/* <ImageSelected src={images[imageIndex]} alt="background" /> */}
 				<Message>{message}</Message>
 				<Bible>{bible}</Bible>
 			</ImageWrap>
@@ -64,11 +64,6 @@ const ImageWrap = styled.div`
 	background-repeat: no-repeat;
 	background-size: cover;
 `;
-
-// const ImageSelected = styled.img`
-// 	width: 100%;
-// 	overflow: hidden;
-// `;
 
 const Message = styled.div``;
 

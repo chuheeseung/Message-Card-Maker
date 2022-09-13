@@ -33,7 +33,7 @@ function Image({ data }) {
 
 	return (
 		<>
-			<ImageWrap ref={imgResult} backgroundImage={images[imageIndex]}>
+			<ImageWrap ref={imgResult} backgroundImage={images[imageIndex][0]}>
 				{/* <ImageSelected src={images[imageIndex]} alt="background" /> */}
 				<Message>{message}</Message>
 				<Bible>{bible}</Bible>

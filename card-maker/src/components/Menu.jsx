@@ -19,14 +19,16 @@ function Menu({ getData }) {
 	const showBackGround = () => {
 		return (
 			<div>
-				<MenuImg src={images[0]} name="0" onClick={getImage} />
-				<MenuImg src={images[1]} name="1" onClick={getImage} />
-				<MenuImg src={images[2]} name="2" onClick={getImage} />
-				<MenuImg src={images[3]} name="3" onClick={getImage} />
-				<MenuImg src={images[4]} name="4" onClick={getImage} />
-				<MenuImg src={images[5]} name="5" onClick={getImage} />
-				<MenuImg src={images[6]} name="6" onClick={getImage} />
-				<MenuImg src={images[7]} name="7" onClick={getImage} />
+				{images.map((item) => {
+					return (
+						<MenuImg
+							key={item[1]}
+							src={item[0]}
+							name={item[1]}
+							onClick={getImage}
+						/>
+					);
+				})}
 			</div>
 		);
 	};
@@ -36,52 +38,7 @@ function Menu({ getData }) {
 	};
 
 	const showBibles = () => {
-		return (
-			<TextWrap>
-				<MinText
-					value={bibles[0]['max']}
-					name={bibles[0]['index']}
-					onClick={getBible}
-				>
-					{bibles[0]['min']}
-				</MinText>
-				<MinText
-					value={bibles[1]['max']}
-					name={bibles[1]['index']}
-					onClick={getBible}
-				>
-					{bibles[1]['min']}
-				</MinText>
-				<MinText
-					value={bibles[2]['max']}
-					name={bibles[2]['index']}
-					onClick={getBible}
-				>
-					{bibles[2]['min']}
-				</MinText>
-				<MinText
-					value={bibles[3]['max']}
-					name={bibles[3]['index']}
-					onClick={getBible}
-				>
-					{bibles[3]['min']}
-				</MinText>
-				<MinText
-					value={bibles[4]['max']}
-					name={bibles[4]['index']}
-					onClick={getBible}
-				>
-					{bibles[4]['min']}
-				</MinText>
-				<MinText
-					value={bibles[5]['max']}
-					name={bibles[5]['index']}
-					onClick={getBible}
-				>
-					{bibles[5]['min']}
-				</MinText>
-			</TextWrap>
-		);
+		return <div>bibles</div>;
 	};
 
 	const getBible = (e) => {

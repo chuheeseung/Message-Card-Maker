@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
+import '../index.css';
 import { images } from '../data/image';
 import html2canvas from 'html2canvas';
 
@@ -7,6 +8,7 @@ function Image({ data }) {
 	const [message, setMessage] = useState('');
 	const [imageIndex, setImageIndex] = useState(0);
 	const [bible, setBible] = useState('');
+	const maxLength = 50;
 
 	const imgResult = useRef();
 
@@ -17,7 +19,7 @@ function Image({ data }) {
 	const handleDownload = () => {
 		const capture = document.querySelector('#imgResult');
 		html2canvas(capture).then((canvas) => {
-			saveAs(canvas.toDataURL('image/jpg'), 'card.jpg');
+			saveAs(canvas.toDataURL('image/jpg'), 'card');
 		});
 	};
 
@@ -48,16 +50,16 @@ function Image({ data }) {
 				<Message>{message}</Message>
 				<Bible>{bible}</Bible>
 			</ImageWrap>
-			<WriteMessage>
-				<div>메시지를 입력하세요.</div>
+			<MessageWrap>
 				<textarea
-					placeholder="여기에 입력하세요."
+					placeholder="메시지를  입력하세요."
 					id="message"
-					maxLength="50"
+					maxLength={maxLength}
+					rows="8"
 					value={message}
 					onChange={handleMessage}
 				/>
-			</WriteMessage>
+			</MessageWrap>
 			<ButtonWrap>
 				<SubmitButton onClick={handleDownload}>이미지 저장하기</SubmitButton>
 			</ButtonWrap>
@@ -106,11 +108,18 @@ const Bible = styled.div`
 	top: 80%;
 `;
 
-const WriteMessage = styled.div`
+const MessageWrap = styled.div`
+	width: 100%;
+	margin: 10px auto;
+	text-align: center;
+
 	textarea {
 		width: 90%;
-		height: 10vh;
+		padding: 10px;
+		box-sizing: content-box;
 		resize: none;
+		border: 1px solid var(--msg-color);
+		border-radius: 5px;
 	}
 `;
 

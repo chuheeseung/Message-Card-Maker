@@ -74,19 +74,23 @@ const ImageContainer = styled.div`
 
 const ImageWrap = styled.div`
 	width: 100%;
-	height: 50vh;
-	/* background-image: url(${(props) => props.backgroundImage});
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover; */
 	overflow: hidden;
 	position: relative;
+
+	&:after {
+		display: block;
+		content: '';
+		padding-bottom: 100%;
+	}
 `;
 
 const ImageContent = styled.img`
 	width: 100%;
 	height: 100%;
-	position: relative;
+	position: absolute;
+	top: 0;
+	left: 0;
+	object-fit: cover;
 `;
 
 const Message = styled.div`

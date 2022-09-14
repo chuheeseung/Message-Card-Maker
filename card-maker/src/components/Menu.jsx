@@ -54,7 +54,7 @@ export const ButtonWrap = styled.div`
 `;
 
 export const Button = styled.button`
-	width: 80px;
+	width: 70px;
 	height: 30px;
 	margin: 10px 20px;
 	background-color: #b4aee8;

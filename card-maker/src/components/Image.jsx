@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { images } from '../data/image';
 import domtoimage from 'dom-to-image';
 import { saveAs } from 'file-saver';
+import { toPng } from 'html-to-image';
 
 function Image({ data }) {
 	const [message, setMessage] = useState('');
@@ -15,16 +16,30 @@ function Image({ data }) {
 		setMessage(e.target.value);
 	};
 
+	// html-to-image
 	const handleDownload = () => {
-		const image = imgResult.current;
-		const filter = (image) => {
-			return image.tagName !== 'BUTTON';
-		};
+		const imageRef = imgResult.current;
 
-		domtoimage.toBlob(image, { filter: filter }).then((blob) => {
-			saveAs(blob, 'card.png');
+		toPng(imageRef).then((image) => {
+			const link = window.document.createElement('a');
+			link.style = 'display: none;';
+			link.download = 'card.png';
+			link.href = image;
+			link.click();
 		});
 	};
+
+	// const handleDownload = () => { // dom-to-image
+	// 	const image = imgResult.current;
+
+	// 	const filter = (image) => {
+	// 		return image.tagName !== 'BUTTON';
+	// 	};
+
+	// 	domtoimage.toBlob(image, { filter: filter }).then((blob) => {
+	// 		saveAs(blob, 'card.png');
+	// 	});
+	// };
 
 	useEffect(() => {
 		console.log(data);
@@ -33,11 +48,13 @@ function Image({ data }) {
 	}, [data]);
 
 	return (
-		<>
-			<ImageWrap ref={imgResult} backgroundImage={images[imageIndex][0]}>
-				<Message>{message}</Message>
-				<Bible>{bible}</Bible>
-			</ImageWrap>
+		<ImageContainer>
+			<ImageWrapTest ref={imgResult}>
+				<ImageWrap backgroundImage={images[imageIndex][0]}>
+					<Message>{message}</Message>
+					<Bible>{bible}</Bible>
+				</ImageWrap>
+			</ImageWrapTest>
 			<WriteMessage>
 				<div>메시지를 입력하세요.</div>
 				<input
@@ -50,11 +67,17 @@ function Image({ data }) {
 			<ButtonWrap>
 				<SubmitButton onClick={handleDownload}>이미지 저장하기</SubmitButton>
 			</ButtonWrap>
-		</>
+		</ImageContainer>
 	);
 }
 
 export default Image;
+
+const ImageContainer = styled.div`
+	height: 100%;
+`;
+
+const ImageWrapTest = styled.div``;
 
 const ImageWrap = styled.div`
 	width: 100%;
@@ -75,7 +98,7 @@ const ButtonWrap = styled.div``;
 
 const SubmitButton = styled.button`
 	width: 100%;
-	height: 15vh;
+	height: 10vh;
 	border: none;
 	/* position: fixed;
 	bottom: 0; */

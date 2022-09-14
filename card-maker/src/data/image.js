@@ -4,8 +4,6 @@ import image2 from '../../src/assets/image2.jpeg';
 import image3 from '../../src/assets/image3.jpeg';
 import image4 from '../../src/assets/image4.jpeg';
 import image5 from '../../src/assets/image5.jpeg';
-import image6 from '../../src/assets/image6.jpeg';
-import image7 from '../../src/assets/image7.jpeg';
 
 // export const images = [
 // 	image0,
@@ -25,6 +23,4 @@ export const images = [
 	[image3, 3],
 	[image4, 4],
 	[image5, 5],
-	[image6, 6],
-	[image7, 7],
 ];

@@ -49,12 +49,11 @@ function Image({ data }) {
 
 	return (
 		<ImageContainer>
-			<ImageWrapTest ref={imgResult}>
-				<ImageWrap backgroundImage={images[imageIndex][0]}>
-					<Message>{message}</Message>
-					<Bible>{bible}</Bible>
-				</ImageWrap>
-			</ImageWrapTest>
+			<ImageWrap ref={imgResult}>
+				<ImageContent src={images[imageIndex][0]} />
+				<Message>{message}</Message>
+				<Bible>{bible}</Bible>
+			</ImageWrap>
 			<WriteMessage>
 				<div>메시지를 입력하세요.</div>
 				<input
@@ -77,20 +76,34 @@ const ImageContainer = styled.div`
 	height: 100%;
 `;
 
-const ImageWrapTest = styled.div``;
-
 const ImageWrap = styled.div`
 	width: 100%;
 	height: 50vh;
-	background-image: url(${(props) => props.backgroundImage});
+	/* background-image: url(${(props) => props.backgroundImage});
 	background-position: center;
 	background-repeat: no-repeat;
-	background-size: cover;
+	background-size: cover; */
+	overflow: hidden;
+	position: relative;
 `;
 
-const Message = styled.div``;
+const ImageContent = styled.img`
+	width: 100%;
+	height: 100%;
+	position: relative;
+`;
 
-const Bible = styled.div``;
+const Message = styled.div`
+	position: absolute;
+	left: 0;
+	top: 0;
+`;
+
+const Bible = styled.div`
+	position: absolute;
+	left: 0;
+	top: 80%;
+`;
 
 const WriteMessage = styled.div``;
 

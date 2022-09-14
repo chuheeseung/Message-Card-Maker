@@ -5,17 +5,6 @@ import image3 from '../../src/assets/image3.jpeg';
 import image4 from '../../src/assets/image4.jpeg';
 import image5 from '../../src/assets/image5.jpeg';
 
-// export const images = [
-// 	image0,
-// 	image1,
-// 	image2,
-// 	image3,
-// 	image4,
-// 	image5,
-// 	image6,
-// 	image7,
-// ];
-
 export const images = [
 	[image0, 0],
 	[image1, 1],

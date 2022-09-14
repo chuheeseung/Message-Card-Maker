@@ -1,9 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { images } from '../data/image';
-import domtoimage from 'dom-to-image';
-import { saveAs } from 'file-saver';
-import { toPng } from 'html-to-image';
+import html2canvas from 'html2canvas';
 
 function Image({ data }) {
 	const [message, setMessage] = useState('');
@@ -16,30 +14,26 @@ function Image({ data }) {
 		setMessage(e.target.value);
 	};
 
-	// html-to-image
 	const handleDownload = () => {
-		const imageRef = imgResult.current;
-
-		toPng(imageRef).then((image) => {
-			const link = window.document.createElement('a');
-			link.style = 'display: none;';
-			link.download = 'card.png';
-			link.href = image;
-			link.click();
+		const capture = document.querySelector('#imgResult');
+		html2canvas(capture).then((canvas) => {
+			saveAs(canvas.toDataURL('image/jpg'), 'card.jpg');
 		});
 	};
 
-	// const handleDownload = () => { // dom-to-image
-	// 	const image = imgResult.current;
+	const saveAs = (uri, filename) => {
+		let link = document.createElement('a');
 
-	// 	const filter = (image) => {
-	// 		return image.tagName !== 'BUTTON';
-	// 	};
-
-	// 	domtoimage.toBlob(image, { filter: filter }).then((blob) => {
-	// 		saveAs(blob, 'card.png');
-	// 	});
-	// };
+		if (typeof link.download === 'string') {
+			link.href = uri;
+			link.download = filename;
+			document.body.appendChild(link);
+			link.click();
+			document.body.removeChild(link);
+		} else {
+			window.open(uri);
+		}
+	};
 
 	useEffect(() => {
 		console.log(data);
@@ -49,7 +43,7 @@ function Image({ data }) {
 
 	return (
 		<ImageContainer>
-			<ImageWrap ref={imgResult}>
+			<ImageWrap id="imgResult" ref={imgResult}>
 				<ImageContent src={images[imageIndex][0]} />
 				<Message>{message}</Message>
 				<Bible>{bible}</Bible>

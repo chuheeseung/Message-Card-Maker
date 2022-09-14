@@ -68,6 +68,7 @@ export default Image;
 
 const ImageContainer = styled.div`
 	height: 100%;
+	overflow-y: scroll;
 `;
 
 const ImageWrap = styled.div`

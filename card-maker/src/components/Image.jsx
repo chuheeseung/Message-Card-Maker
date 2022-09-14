@@ -10,7 +10,7 @@ function Image({ data }) {
 
 	const imgResult = useRef();
 
-	const handleMessge = (e) => {
+	const handleMessage = (e) => {
 		setMessage(e.target.value);
 	};
 
@@ -50,11 +50,12 @@ function Image({ data }) {
 			</ImageWrap>
 			<WriteMessage>
 				<div>메시지를 입력하세요.</div>
-				<input
-					type="text"
+				<textarea
+					placeholder="여기에 입력하세요."
 					id="message"
-					maxLength="200"
-					onChange={handleMessge}
+					maxLength="50"
+					value={message}
+					onChange={handleMessage}
 				/>
 			</WriteMessage>
 			<ButtonWrap>
@@ -92,6 +93,7 @@ const Message = styled.div`
 	position: absolute;
 	left: 0;
 	top: 0;
+	white-space: pre-wrap;
 `;
 
 const Bible = styled.div`
@@ -100,7 +102,13 @@ const Bible = styled.div`
 	top: 80%;
 `;
 
-const WriteMessage = styled.div``;
+const WriteMessage = styled.div`
+	textarea {
+		width: 90%;
+		height: 10vh;
+		resize: none;
+	}
+`;
 
 const ButtonWrap = styled.div``;
 

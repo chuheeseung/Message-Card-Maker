@@ -37,6 +37,34 @@ function BibleCategories({ handleBible }) {
 		);
 	};
 
+	const showRecovery = () => {
+		return (
+			<TextWrap>
+				{bibles['회복'].map((item) => {
+					return (
+						<MinText key={item.index} value={item.max} onClick={getBible}>
+							{item.min}
+						</MinText>
+					);
+				})}
+			</TextWrap>
+		);
+	};
+
+	const showImpression = () => {
+		return (
+			<TextWrap>
+				{bibles['감동'].map((item) => {
+					return (
+						<MinText key={item.index} value={item.max} onClick={getBible}>
+							{item.min}
+						</MinText>
+					);
+				})}
+			</TextWrap>
+		);
+	};
+
 	const getBible = (e) => {
 		setSelectedBible(e.target.attributes[0].textContent);
 	};
@@ -54,10 +82,18 @@ function BibleCategories({ handleBible }) {
 				<Button value="grace" onClick={() => setCategory('grace')}>
 					은혜
 				</Button>
+				<Button value="recovery" onClick={() => setCategory('recovery')}>
+					회복
+				</Button>
+				<Button value="impression" onClick={() => setCategory('impression')}>
+					감동
+				</Button>
 			</ButtonWrap>
 			<DataWrap>
 				{category === 'pleasure' && showPleasure()}
 				{category === 'grace' && showGrace()}
+				{category === 'recovery' && showRecovery()}
+				{category === 'impression' && showImpression()}
 			</DataWrap>
 		</>
 	);

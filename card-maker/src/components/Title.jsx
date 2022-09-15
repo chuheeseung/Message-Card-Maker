@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import '../index.css';
 
 function Title() {
-	return <TitleText>광천교회 메시지 카드</TitleText>;
+	return <TitleText>광천교회 목장축제 전도카드</TitleText>;
 }
 
 export default Title;

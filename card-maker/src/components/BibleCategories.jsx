@@ -67,7 +67,6 @@ function BibleCategories({ handleBible }) {
 	};
 
 	const getBible = (e) => {
-		console.log(e);
 		setSelectedBible(e.target.attributes[0].textContent);
 	};
 

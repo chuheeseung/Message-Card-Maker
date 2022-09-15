@@ -6,7 +6,7 @@ import '../index.css';
 
 function Menu({ getData }) {
 	const [menu, setMenu] = useState('');
-	const [imageData, setImageData] = useState('');
+	const [imageData, setImageData] = useState(0);
 	const [bibleData, setBibleData] = useState('');
 
 	const setBackGround = () => {

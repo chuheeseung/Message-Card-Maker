@@ -104,13 +104,18 @@ export default BibleCategories;
 
 const TextWrap = styled.div`
 	display: flex;
+	padding: 0 2%;
 `;
 
 const MinText = styled.p`
 	white-space: pre;
+	background-color: var(--background-color);
+	border: 1px solid red;
+	margin: 0 2%;
 `;
 
 const BibleWrap = styled.div`
 	width: 100%;
 	overflow-x: scroll;
+	background-color: var(--secondary-color);
 `;

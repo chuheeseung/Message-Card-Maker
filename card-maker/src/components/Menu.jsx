@@ -64,6 +64,7 @@ export const Button = styled.button`
 	background-color: #ffd803;
 	border: none;
 	border-radius: 50px;
+	font-family: 'Nanum Gothic', sans-serif;
 
 	&:hover {
 		transition: all ease 0.1s;

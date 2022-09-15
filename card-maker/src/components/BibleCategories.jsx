@@ -112,6 +112,7 @@ const MinText = styled.p`
 	background-color: var(--background-color);
 	border: 1px solid red;
 	margin: 0 2%;
+	font-family: 'Nanum Gothic', sans-serif;
 `;
 
 const BibleWrap = styled.div`

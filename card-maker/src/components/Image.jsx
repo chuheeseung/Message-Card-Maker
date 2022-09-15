@@ -74,6 +74,7 @@ export default Image;
 const ImageContainer = styled.div`
 	height: 100%;
 	overflow-y: scroll;
+	font-family: 'Nanum Gothic', sans-serif;
 `;
 
 const ImageWrap = styled.div`
@@ -109,12 +110,15 @@ const Message = styled.div`
 	left: 0;
 	top: 5%;
 	white-space: pre-wrap;
+	font-family: 'Nanum Gothic', sans-serif;
 `;
 
 const Bible = styled.div`
 	position: absolute;
 	left: 0;
 	top: 80%;
+	white-space: pre-wrap;
+	font-family: 'Nanum Gothic', sans-serif;
 `;
 
 const MessageWrap = styled.div`
@@ -145,6 +149,7 @@ const SubmitButton = styled.button`
 	border-radius: 30px;
 	background-color: var(--button-color);
 	font-size: 24px;
+	font-family: 'Nanum Gothic', sans-serif;
 	color: white;
 
 	&:hover {

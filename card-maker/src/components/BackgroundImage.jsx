@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { images } from '../data/image';
+import '../index.css';
 
 function BackgroundImage({ handleImage }) {
 	const [selectedImage, setSelectedImage] = useState(0);
@@ -14,7 +15,7 @@ function BackgroundImage({ handleImage }) {
 	}, [handleImage, selectedImage]);
 
 	return (
-		<div>
+		<ImageWrap>
 			{images.map((item) => {
 				return (
 					<MenuImg
@@ -25,13 +26,29 @@ function BackgroundImage({ handleImage }) {
 					/>
 				);
 			})}
-		</div>
+		</ImageWrap>
 	);
 }
 
 export default BackgroundImage;
 
+const ImageWrap = styled.div`
+	width: 100%;
+	background-color: var(--secondary-color);
+	text-align: center;
+	margin: 0px;
+	display: block;
+	overflow-x: scroll;
+`;
+
 const MenuImg = styled.img`
-	width: 40px;
-	height: 40px;
+	width: 6vh;
+	height: 6vh;
+	padding: 2px 4px;
+	border-radius: 8px;
+
+	&:hover {
+		transition: all ease 0.1s;
+		transform: scale(1.05);
+	}
 `;

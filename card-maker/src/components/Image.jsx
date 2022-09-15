@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import '../index.css';
 import { images } from '../data/image';
 import html2canvas from 'html2canvas';
+import logo from '../assets/logo.png';
 
 function Image({ data }) {
 	const [message, setMessage] = useState('');
@@ -47,6 +48,7 @@ function Image({ data }) {
 		<ImageContainer>
 			<ImageWrap id="imgResult" ref={imgResult}>
 				<ImageContent src={images[imageIndex][0]} />
+				<LogoImage src={logo} />
 				<Message>{message}</Message>
 				<Bible>{bible}</Bible>
 			</ImageWrap>
@@ -95,10 +97,17 @@ const ImageContent = styled.img`
 	object-fit: cover;
 `;
 
+const LogoImage = styled.img`
+	width: 20%;
+	position: absolute;
+	top: 2%;
+	right: 5%;
+`;
+
 const Message = styled.div`
 	position: absolute;
 	left: 0;
-	top: 0;
+	top: 5%;
 	white-space: pre-wrap;
 `;
 
@@ -112,29 +121,30 @@ const MessageWrap = styled.div`
 	width: 100%;
 	margin: 10px auto;
 	text-align: center;
+	border: 1px solid var(--paragraph-color);
 
 	textarea {
 		width: 90%;
 		padding: 10px;
 		box-sizing: content-box;
 		resize: none;
-		border: 1px solid var(--msg-color);
 		border-radius: 5px;
 	}
 `;
 
-const ButtonWrap = styled.div``;
+const ButtonWrap = styled.div`
+	text-align: center;
+`;
 
 const SubmitButton = styled.button`
-	width: 100%;
-	height: 10vh;
+	width: 50%;
+	height: 15%;
+	margin: 10px auto;
+	padding: 2px 0;
 	border: none;
-	/* position: fixed;
-	bottom: 0; */
-	border-top-left-radius: 30px;
-	border-top-right-radius: 30px;
-	background-color: #4440b3;
-	font-size: 26px;
+	border-radius: 30px;
+	background-color: var(--button-color);
+	font-size: 24px;
 	color: white;
 
 	&:hover {

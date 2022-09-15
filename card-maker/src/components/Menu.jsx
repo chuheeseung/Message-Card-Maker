@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import BibleCategories from './BibleCategories';
 import BackgroundImage from './BackgroundImage';
+import '../index.css';
 
 function Menu({ getData }) {
 	const [menu, setMenu] = useState('');
@@ -49,17 +50,28 @@ function Menu({ getData }) {
 export default Menu;
 
 export const ButtonWrap = styled.div`
-	background-color: #f0eefa;
-	justify-content: space-between;
+	width: 100%;
+	height: 20%;
+	background-color: #e3f6f5;
+	text-align: center;
+	display: inline-block;
 `;
 
 export const Button = styled.button`
 	width: 70px;
 	height: 30px;
-	margin: 10px 20px;
-	background-color: #b4aee8;
+	margin: 2% 2%;
+	background-color: #ffd803;
 	border: none;
 	border-radius: 50px;
+
+	&:hover {
+		transition: all ease 0.1s;
+		transform: scale(1.05);
+	}
 `;
 
-export const DataWrap = styled.div``;
+const DataWrap = styled.div`
+	width: 100%;
+	display: block;
+`;

@@ -3,7 +3,8 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import styled from 'styled-components';
 import { bibles } from '../data/bible';
-import { Button, ButtonWrap, DataWrap } from './Menu';
+import { Button, ButtonWrap } from './Menu';
+import '../index.css';
 
 function BibleCategories({ handleBible }) {
 	const [category, setCategory] = useState('');
@@ -66,6 +67,7 @@ function BibleCategories({ handleBible }) {
 	};
 
 	const getBible = (e) => {
+		console.log(e);
 		setSelectedBible(e.target.attributes[0].textContent);
 	};
 
@@ -89,12 +91,12 @@ function BibleCategories({ handleBible }) {
 					감동
 				</Button>
 			</ButtonWrap>
-			<DataWrap>
+			<BibleWrap>
 				{category === 'pleasure' && showPleasure()}
 				{category === 'grace' && showGrace()}
 				{category === 'recovery' && showRecovery()}
 				{category === 'impression' && showImpression()}
-			</DataWrap>
+			</BibleWrap>
 		</>
 	);
 }
@@ -107,4 +109,9 @@ const TextWrap = styled.div`
 
 const MinText = styled.p`
 	white-space: pre;
+`;
+
+const BibleWrap = styled.div`
+	width: 100%;
+	overflow-x: scroll;
 `;

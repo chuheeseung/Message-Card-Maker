@@ -88,6 +88,7 @@ const ImageWrap = styled.div`
 	width: 100%;
 	overflow: hidden;
 	position: relative;
+	align-items: center;
 
 	&:after {
 		display: block;
@@ -119,11 +120,21 @@ const LogoImage = styled.img`
 `;
 
 const Message = styled.div`
+	width: 90%;
+	height: 70%;
 	position: absolute;
-	left: 0;
-	top: 5%;
+	/* left: 0; */
+	top: 7%;
+	margin: 0 auto;
+	overflow-y: hidden;
 	white-space: pre-wrap;
-	font-family: 'Nanum Gothic', sans-serif;
+	font-family: 'Do Hyeon', sans-serif;
+	font-size: 4em;
+	font-weight: 800;
+	border: 1px solid red;
+
+	@media (min-width: 1024px) {
+	}
 `;
 
 const Bible = styled.div`
@@ -132,6 +143,10 @@ const Bible = styled.div`
 	top: 80%;
 	white-space: pre-wrap;
 	font-family: 'Nanum Gothic', sans-serif;
+	border: 1px solid red;
+
+	@media (min-width: 1024px) {
+	}
 `;
 
 const MessageWrap = styled.div`
@@ -150,20 +165,22 @@ const MessageWrap = styled.div`
 `;
 
 const ButtonWrap = styled.div`
+	width: 100%;
+	height: 80%;
 	text-align: center;
 `;
 
 const SubmitButton = styled.button`
 	width: 50%;
-	height: 15%;
-	margin: 10px auto;
+	height: 25%;
+	margin: 20px auto;
 	padding: 2px 0;
 	border: none;
 	border-radius: 30px;
-	background-color: var(--button-color);
-	font-size: 24px;
+	background-color: var(--tertiary-color);
+	font-size: 22px;
 	font-family: 'Nanum Gothic', sans-serif;
-	color: white;
+	color: var(--button-text-color);
 
 	&:hover {
 		transition: all ease 0.1s;

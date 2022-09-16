@@ -60,21 +60,33 @@ function BibleCategories({ handleBible }) {
 
 export default BibleCategories;
 
+const BibleWrap = styled.div`
+	width: 100%;
+	padding-bottom: 3%;
+	overflow-x: scroll;
+	background-color: var(--secondary-color);
+`;
+
 const TextWrap = styled.div`
 	display: flex;
-	padding: 0 2%;
+	flex-wrap: nowrap;
+	/* justify-content: center; */
 `;
 
 const MinText = styled.p`
-	white-space: pre;
-	background-color: var(--background-color);
-	border: 1px solid red;
+	width: 30px;
 	margin: 0 2%;
+	padding: 0 1%;
 	font-family: 'Nanum Gothic', sans-serif;
-`;
+	font-size: 1.1em;
+	border-radius: 5px;
+	text-align: center;
+	white-space: pre;
+	color: var(--button-text-color);
+	background-color: var(--button-color);
 
-const BibleWrap = styled.div`
-	width: 100%;
-	overflow-x: scroll;
-	background-color: var(--secondary-color);
+	@media (min-width: 1024px) {
+		width: 26px;
+		font-size: 1.2em;
+	}
 `;

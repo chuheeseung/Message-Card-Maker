@@ -10,52 +10,10 @@ function BibleCategories({ handleBible }) {
 	const [category, setCategory] = useState('');
 	const [selectedBible, setSelectedBible] = useState('');
 
-	const showPleasure = () => {
+	const showBibleButtons = () => {
 		return (
 			<TextWrap>
-				{bibles['기쁨'].map((item) => {
-					return (
-						<MinText key={item.index} value={item.max} onClick={getBible}>
-							{item.min}
-						</MinText>
-					);
-				})}
-			</TextWrap>
-		);
-	};
-
-	const showGrace = () => {
-		return (
-			<TextWrap>
-				{bibles['은혜'].map((item) => {
-					return (
-						<MinText key={item.index} value={item.max} onClick={getBible}>
-							{item.min}
-						</MinText>
-					);
-				})}
-			</TextWrap>
-		);
-	};
-
-	const showRecovery = () => {
-		return (
-			<TextWrap>
-				{bibles['회복'].map((item) => {
-					return (
-						<MinText key={item.index} value={item.max} onClick={getBible}>
-							{item.min}
-						</MinText>
-					);
-				})}
-			</TextWrap>
-		);
-	};
-
-	const showImpression = () => {
-		return (
-			<TextWrap>
-				{bibles['감동'].map((item) => {
+				{bibles[category].map((item) => {
 					return (
 						<MinText key={item.index} value={item.max} onClick={getBible}>
 							{item.min}
@@ -91,10 +49,10 @@ function BibleCategories({ handleBible }) {
 				</Button>
 			</ButtonWrap>
 			<BibleWrap>
-				{category === 'pleasure' && showPleasure()}
-				{category === 'grace' && showGrace()}
-				{category === 'recovery' && showRecovery()}
-				{category === 'impression' && showImpression()}
+				{category === 'pleasure' && showBibleButtons()}
+				{category === 'grace' && showBibleButtons()}
+				{category === 'recovery' && showBibleButtons()}
+				{category === 'impression' && showBibleButtons()}
 			</BibleWrap>
 		</>
 	);

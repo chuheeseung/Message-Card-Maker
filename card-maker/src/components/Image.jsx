@@ -108,6 +108,7 @@ const ImageContent = styled.img`
 	top: 0;
 	left: 0;
 	object-fit: cover;
+	opacity: 0.6;
 `;
 
 const LogoImage = styled.img`

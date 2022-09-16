@@ -31,4 +31,8 @@ export default App;
 const ContentWrap = styled.div`
 	width: 100%;
 	height: 100%;
+
+	@media (min-width: 1024px) {
+		background-color: #f2f2f2;
+	}
 `;

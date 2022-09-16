@@ -72,9 +72,16 @@ function Image({ data }) {
 export default Image;
 
 const ImageContainer = styled.div`
+	width: 100%;
 	height: 100%;
 	overflow-y: scroll;
 	font-family: 'Nanum Gothic', sans-serif;
+
+	@media (min-width: 1024px) {
+		width: 800px;
+		margin: 0px auto;
+		text-align: center;
+	}
 `;
 
 const ImageWrap = styled.div`
@@ -86,6 +93,11 @@ const ImageWrap = styled.div`
 		display: block;
 		content: '';
 		padding-bottom: 100%;
+	}
+
+	@media (min-width: 1024px) {
+		width: 100%;
+		padding: 0px;
 	}
 `;
 

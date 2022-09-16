@@ -30,7 +30,7 @@ function Menu({ getData }) {
 	}, [imageData, bibleData]);
 
 	return (
-		<>
+		<MenuContainer>
 			<ButtonWrap>
 				<Button value="backGround" onClick={setBackGround}>
 					배경
@@ -43,11 +43,20 @@ function Menu({ getData }) {
 				{menu === 'backGround' && <BackgroundImage handleImage={handleImage} />}
 				{menu === 'bible' && <BibleCategories handleBible={handleBible} />}
 			</DataWrap>
-		</>
+		</MenuContainer>
 	);
 }
 
 export default Menu;
+
+const MenuContainer = styled.div`
+	width: 100%;
+
+	@media (min-width: 1024px) {
+		width: 800px;
+		margin: 0 auto;
+	}
+`;
 
 export const ButtonWrap = styled.div`
 	width: 100%;
@@ -55,6 +64,10 @@ export const ButtonWrap = styled.div`
 	background-color: #e3f6f5;
 	text-align: center;
 	display: inline-block;
+
+	@media (min-width: 1024px) {
+		width: 100%;
+	}
 `;
 
 export const Button = styled.button`

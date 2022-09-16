@@ -123,9 +123,9 @@ const Message = styled.div`
 	width: 90%;
 	height: 70%;
 	position: absolute;
-	/* left: 0; */
+	left: 2%;
 	top: 7%;
-	margin: 0 auto;
+	/* margin: 0 auto; */
 	overflow-y: hidden;
 	white-space: pre-wrap;
 	font-family: 'Do Hyeon', sans-serif;
@@ -134,6 +134,8 @@ const Message = styled.div`
 	border: 1px solid red;
 
 	@media (min-width: 1024px) {
+		text-align: left;
+		font-size: 6em;
 	}
 `;
 

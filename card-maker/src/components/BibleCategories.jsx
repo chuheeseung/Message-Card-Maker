@@ -74,11 +74,11 @@ const TextWrap = styled.div`
 `;
 
 const MinText = styled.p`
-	width: 30px;
+	width: 11%;
 	margin: 0 2%;
 	padding: 0 1%;
 	font-family: 'Nanum Gothic', sans-serif;
-	font-size: 1.1em;
+	font-size: 1em;
 	border-radius: 5px;
 	text-align: center;
 	white-space: pre;

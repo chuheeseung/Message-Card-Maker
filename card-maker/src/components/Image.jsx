@@ -132,7 +132,6 @@ const Message = styled.div`
 	font-size: 4em;
 	font-weight: 800;
 	color: var(--image-text-color);
-	border: 1px solid red;
 
 	@media (min-width: 1024px) {
 		text-align: left;
@@ -145,13 +144,13 @@ const Bible = styled.div`
 	/* height: 17%; */
 	position: absolute;
 	left: 0;
-	top: 80%;
+	/* top: 80%; */
+	bottom: 1%;
 	white-space: pre-wrap;
 	/* overflow-y: hidden; */
 	font-family: 'Nanum Gothic', sans-serif;
-	font-size: 1.2em;
+	font-size: 1em;
 	color: var(--image-text-color);
-	border: 1px solid red;
 
 	@media (min-width: 1024px) {
 	}

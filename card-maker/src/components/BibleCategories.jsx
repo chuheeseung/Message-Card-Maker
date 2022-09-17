@@ -1,5 +1,4 @@
 import React from 'react';
-import { useEffect } from 'react';
 import { useState } from 'react';
 import styled from 'styled-components';
 import { bibles } from '../data/bible';
@@ -8,11 +7,10 @@ import '../index.css';
 import { useRecoilState } from 'recoil';
 import { BibleData } from '../states/ImageState';
 
-function BibleCategories({ handleBible }) {
+function BibleCategories() {
 	const [bibleData, setBibleData] = useRecoilState(BibleData);
 
 	const [category, setCategory] = useState('');
-	const [selectedBible, setSelectedBible] = useState('');
 
 	const showBibleButtons = () => {
 		return (

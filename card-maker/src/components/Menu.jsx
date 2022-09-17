@@ -4,10 +4,8 @@ import BibleCategories from './BibleCategories';
 import BackgroundImage from './BackgroundImage';
 import '../index.css';
 
-function Menu({ getData }) {
+function Menu() {
 	const [menu, setMenu] = useState('');
-	const [imageData, setImageData] = useState(0);
-	const [bibleData, setBibleData] = useState('');
 
 	const setBackGround = () => {
 		setMenu('backGround');
@@ -16,18 +14,6 @@ function Menu({ getData }) {
 	const setBible = () => {
 		setMenu('bible');
 	};
-
-	const handleBible = (e) => {
-		setBibleData(e);
-	};
-
-	const handleImage = (e) => {
-		setImageData(e);
-	};
-
-	useEffect(() => {
-		getData([imageData, bibleData]);
-	}, [imageData, bibleData]);
 
 	return (
 		<MenuContainer>
@@ -40,8 +26,8 @@ function Menu({ getData }) {
 				</Button>
 			</ButtonWrap>
 			<DataWrap>
-				{menu === 'backGround' && <BackgroundImage handleImage={handleImage} />}
-				{menu === 'bible' && <BibleCategories handleBible={handleBible} />}
+				{menu === 'backGround' && <BackgroundImage />}
+				{menu === 'bible' && <BibleCategories />}
 			</DataWrap>
 		</MenuContainer>
 	);

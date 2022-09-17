@@ -5,22 +5,12 @@ import Title from './components/Title';
 import styled from 'styled-components';
 
 function App() {
-	const [data, setData] = useState([0, '']);
-
-	const getData = (response) => {
-		setData(response);
-	};
-
-	useEffect(() => {
-		setData([0, '']);
-	}, []);
-
 	return (
 		<div className="App">
 			<ContentWrap>
 				<Title />
-				<Menu getData={getData} />
-				<Image data={data} />
+				<Menu />
+				<Image />
 			</ContentWrap>
 		</div>
 	);

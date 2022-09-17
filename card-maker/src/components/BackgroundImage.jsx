@@ -2,17 +2,15 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { images } from '../data/image';
 import '../index.css';
+import { useRecoilState } from 'recoil';
+import { ImageData } from '../states/ImageState';
 
-function BackgroundImage({ handleImage }) {
-	const [selectedImage, setSelectedImage] = useState(0);
+function BackgroundImage() {
+	const [imageData, setImageData] = useRecoilState(ImageData);
 
 	const getImage = (e) => {
-		setSelectedImage(Number(e.target.name));
+		setImageData(Number(e.target.name));
 	};
-
-	useEffect(() => {
-		handleImage(selectedImage);
-	}, [handleImage, selectedImage]);
 
 	return (
 		<ImageWrap>

@@ -5,8 +5,12 @@ import styled from 'styled-components';
 import { bibles } from '../data/bible';
 import { Button, ButtonWrap } from './Menu';
 import '../index.css';
+import { useRecoilState } from 'recoil';
+import { BibleData } from '../states/ImageState';
 
 function BibleCategories({ handleBible }) {
+	const [bibleData, setBibleData] = useRecoilState(BibleData);
+
 	const [category, setCategory] = useState('');
 	const [selectedBible, setSelectedBible] = useState('');
 
@@ -25,12 +29,8 @@ function BibleCategories({ handleBible }) {
 	};
 
 	const getBible = (e) => {
-		setSelectedBible(e.target.attributes[0].textContent);
+		setBibleData(e.target.attributes[0].textContent);
 	};
-
-	useEffect(() => {
-		handleBible(selectedBible);
-	}, [handleBible, selectedBible]);
 
 	return (
 		<>

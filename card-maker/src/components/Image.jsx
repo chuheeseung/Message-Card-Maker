@@ -4,11 +4,15 @@ import '../index.css';
 import { images } from '../data/image';
 import html2canvas from 'html2canvas';
 import logo from '../assets/logo.png';
+import { useRecoilState } from 'recoil';
+import { BibleData, ImageData } from '../states/ImageState';
 
-function Image({ data }) {
+function Image() {
+	const [imageIndex, setImageIndex] = useRecoilState(ImageData);
+	const [bible, setBible] = useRecoilState(BibleData);
+
 	const [message, setMessage] = useState('');
-	const [imageIndex, setImageIndex] = useState(0);
-	const [bible, setBible] = useState('');
+
 	const maxLength = 50;
 
 	const imgResult = useRef();
@@ -37,12 +41,6 @@ function Image({ data }) {
 			window.open(uri);
 		}
 	};
-
-	useEffect(() => {
-		console.log(data);
-		setImageIndex(data[0]);
-		setBible(data[1]);
-	}, [data]);
 
 	return (
 		<ImageContainer>

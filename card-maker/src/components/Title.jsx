@@ -13,7 +13,7 @@ const TitleText = styled.div`
 	height: 7vh;
 	line-height: 7vh;
 	font-size: 2.6em;
-	font-weight: 700;
+	font-weight: 800;
 	font-family: 'Nanum Gothic', sans-serif;
 	text-align: center;
 	background-color: var(--background-color);

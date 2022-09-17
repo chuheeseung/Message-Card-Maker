@@ -131,6 +131,7 @@ const Message = styled.div`
 	font-family: 'Do Hyeon', sans-serif;
 	font-size: 4em;
 	font-weight: 800;
+	color: var(--image-text-color);
 	border: 1px solid red;
 
 	@media (min-width: 1024px) {
@@ -140,11 +141,16 @@ const Message = styled.div`
 `;
 
 const Bible = styled.div`
+	width: 99%;
+	height: 16%;
 	position: absolute;
 	left: 0;
 	top: 80%;
 	white-space: pre-wrap;
+	overflow-y: hidden;
 	font-family: 'Nanum Gothic', sans-serif;
+	font-size: 1.2em;
+	color: var(--image-text-color);
 	border: 1px solid red;
 
 	@media (min-width: 1024px) {

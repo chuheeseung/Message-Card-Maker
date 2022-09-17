@@ -19,7 +19,7 @@ const TitleText = styled.div`
 	background-color: var(--background-color);
 	color: var(--headline-color);
 
-	@media (min-width: 1024px) {
+	@media (min-width: var(--laptop-width)) {
 		width: 800px;
 		margin: 0 auto;
 	}

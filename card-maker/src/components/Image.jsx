@@ -128,8 +128,8 @@ const Message = styled.div`
 	/* margin: 0 auto; */
 	overflow-y: hidden;
 	white-space: pre-wrap;
-	font-family: 'Do Hyeon', sans-serif;
-	font-size: 4em;
+	font-family: 'Gowun Dodum', sans-serif;
+	font-size: 3.5em;
 	font-weight: 800;
 	color: var(--image-text-color);
 
@@ -143,9 +143,9 @@ const Bible = styled.div`
 	width: 99%;
 	/* height: 17%; */
 	position: absolute;
-	left: 0;
-	/* top: 80%; */
+	right: 2%;
 	bottom: 1%;
+	text-align: right;
 	white-space: pre-wrap;
 	/* overflow-y: hidden; */
 	font-family: 'Nanum Gothic', sans-serif;

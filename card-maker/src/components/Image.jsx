@@ -142,12 +142,12 @@ const Message = styled.div`
 
 const Bible = styled.div`
 	width: 99%;
-	height: 16%;
+	/* height: 17%; */
 	position: absolute;
 	left: 0;
 	top: 80%;
 	white-space: pre-wrap;
-	overflow-y: hidden;
+	/* overflow-y: hidden; */
 	font-family: 'Nanum Gothic', sans-serif;
 	font-size: 1.2em;
 	color: var(--image-text-color);

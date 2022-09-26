@@ -1,7 +1,7 @@
 import React from 'react';
 import Title from '../components/Title';
-import Image from '../components/Image';
-import Menu from '../components/Menu';
+import Image from '../components/MainScreen/Image';
+import Menu from '../components/MainScreen/Menu';
 import styled from 'styled-components';
 import '../index.css';
 

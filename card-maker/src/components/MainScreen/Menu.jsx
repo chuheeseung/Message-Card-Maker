@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import BibleCategories from './BibleCategories';
 import BackgroundImage from './BackgroundImage';
-import '../index.css';
+import '../../index.css';
 
 function Menu() {
 	const [menu, setMenu] = useState('');

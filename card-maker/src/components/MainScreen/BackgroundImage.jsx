@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import { images } from '../data/image';
-import '../index.css';
+import { images } from '../../data/image';
+import '../../index.css';
 import { useRecoilState } from 'recoil';
-import { ImageData } from '../states/ImageState';
+import { ImageData } from '../../states/ImageState';
 
 function BackgroundImage() {
 	const [imageData, setImageData] = useRecoilState(ImageData);

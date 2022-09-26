@@ -1,11 +1,11 @@
 import React from 'react';
 import { useState } from 'react';
 import styled from 'styled-components';
-import { bibles } from '../data/bible';
+import { bibles } from '../../data/bible';
 import { Button, ButtonWrap } from './Menu';
-import '../index.css';
+import '../../index.css';
 import { useRecoilState } from 'recoil';
-import { BibleData } from '../states/ImageState';
+import { BibleData } from '../../states/ImageState';
 
 function BibleCategories() {
 	const [bibleData, setBibleData] = useRecoilState(BibleData);

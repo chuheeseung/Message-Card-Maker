@@ -11,6 +11,7 @@ function StartScreen() {
 	return (
 		<>
 			<Title />
+
 			<button onClick={handleClick}></button>
 		</>
 	);

@@ -1,11 +1,11 @@
 import React, { useRef, useState } from 'react';
 import styled from 'styled-components';
-import '../index.css';
-import { images } from '../data/image';
+import '../../index.css';
+import { images } from '../../data/image';
 import html2canvas from 'html2canvas';
-import logo from '../assets/logo.png';
+import logo from '../../assets/logo.png';
 import { useRecoilState } from 'recoil';
-import { BibleData, ImageData } from '../states/ImageState';
+import { BibleData, ImageData } from '../../states/ImageState';
 
 function Image() {
 	const [imageIndex, setImageIndex] = useRecoilState(ImageData);

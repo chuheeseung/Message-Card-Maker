@@ -174,7 +174,7 @@ const ButtonWrap = styled.div`
 
 const SubmitButton = styled.button`
 	width: 50%;
-	height: 10%;
+	height: 7%;
 	margin: 20px auto;
 	padding: 2px 0;
 	border: none;

@@ -123,11 +123,10 @@ const Message = styled.div`
 	position: absolute;
 	left: 2%;
 	top: 7%;
-	/* margin: 0 auto; */
 	overflow-y: hidden;
 	white-space: pre-wrap;
 	font-family: 'Gowun Dodum', sans-serif;
-	font-size: 3.5em;
+	font-size: 3em;
 	font-weight: 800;
 	color: var(--image-text-color);
 
@@ -138,16 +137,14 @@ const Message = styled.div`
 `;
 
 const Bible = styled.div`
-	width: 99%;
-	/* height: 17%; */
+	width: 96%;
 	position: absolute;
 	right: 2%;
 	bottom: 1%;
 	text-align: right;
 	white-space: pre-wrap;
-	/* overflow-y: hidden; */
 	font-family: 'Nanum Gothic', sans-serif;
-	font-size: 1em;
+	font-size: 1.3em;
 	color: var(--image-text-color);
 
 	@media (min-width: 1024px) {
@@ -177,7 +174,7 @@ const ButtonWrap = styled.div`
 
 const SubmitButton = styled.button`
 	width: 50%;
-	height: 25%;
+	height: 10%;
 	margin: 20px auto;
 	padding: 2px 0;
 	border: none;

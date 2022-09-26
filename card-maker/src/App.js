@@ -1,29 +1,20 @@
 import React from 'react';
-import Image from './components/Image';
-import Menu from './components/Menu';
-import Title from './components/Title';
-import styled from 'styled-components';
+import { Route, Routes, BrowserRouter } from 'react-router-dom';
 import './index.css';
+import StartScreen from './routes/StartScreen';
+import MainScreen from './routes/MainScreen';
+import NotFound from './routes/NotFound';
 
-function App() {
+const App = () => {
 	return (
-		<div className="App">
-			<ContentWrap>
-				<Title />
-				<Menu />
-				<Image />
-			</ContentWrap>
-		</div>
+		<BrowserRouter>
+			<Routes>
+				<Route path="/" element={<StartScreen />} />
+				<Route path="/main" element={<MainScreen />} />
+				<Route path="/*" element={<NotFound />} />
+			</Routes>
+		</BrowserRouter>
 	);
-}
+};
 
 export default App;
-
-const ContentWrap = styled.div`
-	width: 100%;
-	height: 100%;
-
-	@media (min-width: var(--laptop-width)) {
-		background-color: #f2f2f2;
-	}
-`;

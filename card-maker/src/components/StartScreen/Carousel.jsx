@@ -31,15 +31,11 @@ function Carousel() {
 		);
 	});
 
-	const handleDragStart = (e) => e.preventDefault();
-
-	const onChange = (currentSlide) => {
-		console.log(currentSlide);
-	};
-
 	return (
-		<>
-			<InfoText>디지털 가이드 사용법 숙지하고 시작하세요!</InfoText>
+		<CarouselSection>
+			<InfoTextWrap>
+				<InfoText>디지털 가이드 사용법 숙지하고 시작하세요!</InfoText>
+			</InfoTextWrap>
 			<CarouselConatiner>
 				<AliceCarousel
 					mouseTracking
@@ -51,13 +47,25 @@ function Carousel() {
 					paddingRight={40}
 				/>
 			</CarouselConatiner>
-		</>
+		</CarouselSection>
 	);
 }
 
 export default Carousel;
 
-const InfoText = styled.div``;
+const CarouselSection = styled.div`
+	margin-top: 30%;
+`;
+
+const InfoTextWrap = styled.div`
+	text-align: center;
+`;
+
+const InfoText = styled.div`
+	margin: 2% auto;
+	font-family: 'Nanum Gothic', sans-serif;
+	font-size: 1.5em;
+`;
 
 const CarouselConatiner = styled.div`
 	width: 100%;
@@ -69,12 +77,10 @@ const CarouselConatiner = styled.div`
 const ItemsContain = styled.div`
 	width: 100%;
 	height: 100%;
-	/* padding: 0 5%; */
 `;
 
 const ItemsWrap = styled.div`
 	width: 100%;
-	/* height: 180px; */
 	border-radius: 20px;
 	overflow: hidden;
 	margin: 0 5%;

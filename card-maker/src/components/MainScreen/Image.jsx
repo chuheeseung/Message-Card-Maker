@@ -172,7 +172,7 @@ const ButtonWrap = styled.div`
 	text-align: center;
 `;
 
-export const SubmitButton = styled.button`
+const SubmitButton = styled.button`
 	width: fit-content;
 	height: 7%;
 	line-height: 7%;

@@ -57,15 +57,16 @@ export const ButtonWrap = styled.div`
 `;
 
 export const Button = styled.button`
-	width: 70px;
-	height: 30px;
+	width: 21%;
+	height: 10%;
 	margin: 2% 2%;
 	background-color: #ffd803;
 	border: none;
 	border-radius: 50px;
 	font-family: 'Nanum Gothic', sans-serif;
-	font-size: 1.2em;
+	font-size: 1em;
 	color: #272343;
+	/* overflow: inherit; */
 
 	&:hover {
 		transition: all ease 0.1s;

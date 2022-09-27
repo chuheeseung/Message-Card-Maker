@@ -1,7 +1,8 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
-import CarouselCard from '../components/StartScreen/CarouselCard';
+import { SubmitButton } from '../components/MainScreen/Image';
+import Carousel from '../components/StartScreen/Carousel';
 import Title from '../components/Title';
 
 function StartScreen() {
@@ -13,12 +14,12 @@ function StartScreen() {
 	return (
 		<>
 			<Title />
-			<CarouselCard />
-			<StartButton onClick={handleClick}>디지털 전도카드 시작하기</StartButton>
+			<Carousel />
+			<SubmitButton onClick={handleClick}>
+				디지털 전도카드 시작하기
+			</SubmitButton>
 		</>
 	);
 }
 
 export default StartScreen;
-
-const StartButton = styled.button``;

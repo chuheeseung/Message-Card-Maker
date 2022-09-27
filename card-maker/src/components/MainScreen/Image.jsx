@@ -172,17 +172,19 @@ const ButtonWrap = styled.div`
 	text-align: center;
 `;
 
-const SubmitButton = styled.button`
-	width: 50%;
+export const SubmitButton = styled.button`
+	width: fit-content;
 	height: 7%;
-	margin: 20px auto;
-	padding: 2px 0;
+	line-height: 7%;
+	margin: 3% 2%;
+	padding: 2% 10%;
 	border: none;
 	border-radius: 30px;
-	background-color: var(--tertiary-color);
-	font-size: 22px;
+	background-color: #bae8e8;
+	font-size: 1.6em;
 	font-family: 'Nanum Gothic', sans-serif;
-	color: var(--button-text-color);
+	font-weight: 600;
+	color: #272343;
 
 	&:hover {
 		transition: all ease 0.1s;
